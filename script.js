@@ -1,4 +1,4 @@
-const str = ' Свобода - это выбор и его нужно делать ежедневно';
+const str = ' Свобода - это выбор и его нужно делать ежедневно ';
 
 const changeStr = function(str) {    
 
@@ -11,25 +11,29 @@ const changeStr = function(str) {
         }
     };
 
-    const deleteItem = function() {  
+    const deleteItem = function() { 
+        
+        if (str[0] === ' ' || str.charAt(str.length - 1) === ' ') {
+            return str.trim();
+        }
 
-        const firstString = str.slice(1);
-        const callback = delElem();
+        // const firstString = str.slice(1);
+        // const callback = delElem();
 
-        function delElem() {        
-            if (str[0] !== ' ') {
-                return str;
-            } else {
-                return firstString;
-            }
-        } 
+        // function delElem() {        
+        //     if (str[0] !== ' ') {
+        //         return str;
+        //     } else {
+        //         return firstString;
+        //     }
+        // } 
           
 
-        if (str.charAt(str.length - 1) !== ' ') {
-            return callback;
-        } else {
-            return callback.slice(0, str.length - 1);
-        }
+        // if (str.charAt(str.length - 1) !== ' ') {
+        //     return callback;
+        // } else {
+        //     return callback.slice(0, str.length - 1);
+        // }
     };    
 
     const deleteElement = function() {
